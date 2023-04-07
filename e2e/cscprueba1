@@ -1,0 +1,9 @@
+describe('Login',()=> {
+    it('Validar que el nombre del usuario se encuentre en la esquina superior derecha de la pagina',() => {
+      cy.visit('http://52.169.87.208:7080/')
+      cy.xpath('//input[contains(@id,"username")]').type('rodrigo.santone')
+      cy.xpath('//input[contains(@id,"password")]').type('Apple123#123{enter}')
+      cy.xpath('//a[@href="javascript:;" and @aria-expanded="false"]').should('be.visible').contains('Rodrigo Santone')
+  
+    })
+  })
